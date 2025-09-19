@@ -4,7 +4,7 @@
 
 ## 👥 Integrantes del Grupo
 - Tobias Davila — 📧 tobiasdavnic.13@gmail.com  
-- Ramiro Del Valle (la calle) — 📧 ramidv12@gmail.com   
+- Ramiro Del Valle — 📧 ramidv12@gmail.com   
 
 ---
 
