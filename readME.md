@@ -9,7 +9,8 @@ El presente repositorio corresponde a la primera entrega del Trabajo Práctico E
 El acceso al portal será público para cualquier usuario, mientras que solo la cuenta de administrador dispondrá de permisos para crear, modificar y eliminar contenidos.
 
 📰 Temática: Portal de Noticias de Videojuegos
-La aplicación gira en torno a un portal de noticias dedicado al mundo de los videojuegos. Los visitantes podrán explorar artículos organizados por secciones temáticas, y cada noticia incluirá atributos como título, resumen e imagen asociada.
+La aplicación gira en torno a un portal de noticias dedicado al mundo de los videojuegos. Los visitantes podrán explorar artículos organizados por secciones, donde cada sección corresponde a un videojuego distinto, y cada noticia incluirá atributos como título, resumen e imagen asociada.
+
 
 🔗 Relación entre Secciones y Noticias
 Según el diagrama entidad-relación:
