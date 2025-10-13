@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2025 a las 01:50:04
+-- Tiempo de generación: 13-10-2025 a las 20:56:00
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -50,16 +50,18 @@ INSERT INTO `noticia` (`id`, `titulo`, `img`, `resumen`, `seccion_id`) VALUES
 
 CREATE TABLE `secciones` (
   `id` int(10) UNSIGNED NOT NULL,
-  `nombre` varchar(100) NOT NULL
+  `nombre` varchar(100) NOT NULL,
+  `visitas` int(11) NOT NULL,
+  `genero` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `secciones`
 --
 
-INSERT INTO `secciones` (`id`, `nombre`) VALUES
-(1, 'League of Legends'),
-(2, 'Gta 5');
+INSERT INTO `secciones` (`id`, `nombre`, `visitas`, `genero`) VALUES
+(1, 'League of Legends', 0, ''),
+(2, 'Gta 5', 0, '');
 
 --
 -- Índices para tablas volcadas
