@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2025 a las 21:09:07
+-- Tiempo de generación: 13-10-2025 a las 22:53:38
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -40,7 +40,7 @@ CREATE TABLE `noticia` (
 --
 
 INSERT INTO `noticia` (`id`, `titulo`, `img`, `resumen`, `seccion_id`) VALUES
-(1, 'Jugador de League of Legends logra subir de Bronce a Plata', 'lol1.img', 'Este jugador logra subir de rango después de que el servidor se cayó y todos perdieron puntos menos él...', 1);
+(1, 'Jugador de League of Legends logra subir de Bronce a Plata', 'https://pm1.aminoapps.com/7617/c4f970607c56d99ad65404e0a85c6477211eee04r1-499-580v2_uhq.jpg', 'Este jugador logra subir de rango después de que el servidor se cayó y todos perdieron puntos menos él...', 1);
 
 -- --------------------------------------------------------
 
@@ -60,8 +60,8 @@ CREATE TABLE `secciones` (
 --
 
 INSERT INTO `secciones` (`id`, `nombre`, `img_url`, `genero`) VALUES
-(1, 'League of Legends', '0', ''),
-(2, 'Gta 5', '0', '');
+(1, 'League of Legends', 'https://wallpapers.com/images/hd/stunning-league-of-legends-desktop-jk70emfq9rgxk1qm.jpg', 'Moba'),
+(2, 'Gta 5', 'https://i.pinimg.com/736x/bd/93/4d/bd934dd07ad39bdd69ef0f721253f612.jpg', 'Acción/Sandbox');
 
 --
 -- Índices para tablas volcadas
