@@ -1,0 +1,15 @@
+<?php require_once 'header.phtml'?>
+<main class="seccion-main">
+    <?php foreach($secciones as $seccion){?> 
+    <article class="seccion-card">
+        <img src="<?= $seccion-> img_url?>">
+        <h2><?= $seccion-> nombre ?></h2>
+        <small><?= $seccion -> genero ?></small>
+        <?php  
+            $slug = trim($seccion->nombre);
+            $slug = str_replace(' ', '-', $slug); ?>
+        <a href="secciones/<?=$slug?>/noticias">Ver Noticias</a>
+    </article>
+    <?php } ?>
+</main>
+<?php require_once 'footer.phtml' ?>

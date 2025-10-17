@@ -1,0 +1,16 @@
+<?php require_once 'header.phtml' ?>
+<form action="do_login" method="POST">
+<div class="date-login">
+    <input type="text" id="user" name="user" placeholder="User Name">
+    <input type="password" id="password" name="password" placeholder="Password">
+</div>  
+    <div>
+        <?php if (!empty($error)): ?>
+            <?= $error ?>
+        <?php endif; ?>
+    </div>
+    <button class="btn-login" type="submit">
+        Iniciar Sesion
+    </button>
+</form>
+<?php require_once 'footer.phtml' ?>

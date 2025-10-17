@@ -1,0 +1,45 @@
+<?php require_once 'header.phtml'; ?>
+<?php if (!$user): ?>
+    <?php require_once 'secciones.phtml'; ?>
+<?php else: ?>
+    <h1>Administración de Secciones</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Imagen</th>
+                <th>Genero</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($secciones as $seccion): ?>
+                <tr>
+                    <td><?= $seccion->id ?></td>
+                    <td><?= $seccion->nombre ?></td>
+                    <td>
+                        <img src="<?= $seccion->img_url ?>" >
+                    </td>
+                    <td><?= $seccion->genero ?></td>
+                    <td>
+                        <a href="editarSeccion/<?= $seccion->id ?>">Editar</a>
+                        <a href="eliminarSeccion/<?= $seccion->id ?>">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <div>
+        <h1>Agregar Seccion</h1>
+        <form action="agregarSeccion" method="POST">
+            <input type="text" id="nombre" name="nombre" placeholder="Juego">
+            <input type="text" id="img_url" name="img_url" placeholder="Imagen">
+            <input type="text" id="genero" name="genero" placeholder="Genero">
+            <button type="sumbit" class="btn-agregar">Agregar</button>
+        </form>
+    </div>
+
+<?php endif; ?>

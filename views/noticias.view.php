@@ -1,18 +1,22 @@
 <?php 
 class NoticiasView {
 
-    function mostrarNoticias($noticias) {
-        require_once  './templates/noticias.php';
+    function mostrarNoticias($noticias, $user) {
+        require_once  './templates/adminNoticias.phtml';
     }
 
 
-    function showError($error) {
+    function showError($error, $user) {
         echo $error;
     }
 
-    function mostrarNoticia($noticia) {
-        require_once './templates/noticia.php';
+    function mostrarNoticia($noticia, $user) {
+        require_once './templates/noticia.phtml';
     }
+
+    function showEditar($noticia,$user) {
+        require_once './templates/editarNoticia.phtml';
+    }   
 }
 
 

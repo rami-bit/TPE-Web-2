@@ -1,0 +1,92 @@
+table {
+    width: 99%;
+    border-collapse: collapse;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin-left: 5px;
+}
+
+thead {
+    background-color: black;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    letter-spacing: 0.05em;
+    border: 5px white solid;
+}
+
+thead th {
+    padding: 12px 10px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #2b2b2b;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #181818;
+}
+
+tbody td {
+    padding: 10px;
+    vertical-align: middle;
+    font-size: 0.9em;
+    max-width: 200px; /* ancho máximo de columnas */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* === Imagen === */
+td img {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #333;
+}
+
+/* === Acciones === */
+td a {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+/* Botón editar */
+td a[href^="editar"] {
+    background-color: #2196f3;
+    color: white;
+}
+
+td a[href^="editar"]:hover {
+    background-color: #0d8ae0;
+}
+
+/* Botón eliminar */
+td a[href^="eliminar"] {
+    background-color: #e53935;
+    color: white;
+}
+
+td a[href^="eliminar"]:hover {
+    background-color: #c62828;
+}
+
+.btn-agregar {
+    display: flex;
+    justify-self: flex-end;
+    background-color: rgb(65, 208, 65);
+    color: black;
+    font-size: 20px;
+    border : lightgray 2px groove;
+    border-radius: 12px;
+    margin-top: 5px;
+}

@@ -1,0 +1,52 @@
+<?php require_once 'header.phtml'; ?>
+<?php if (!$user): ?>
+    <?php require_once 'noticias.phtml'; ?>
+<?php else: ?>
+    <h1>Administración de Noticias</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Imagen</th>
+                <th>Resumen</th>
+                <th>Contenido</th>
+                <th>Sección</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($noticias as $noticia): ?>
+                <tr>
+                    <td><?= $noticia->id ?></td>
+                    <td><?= $noticia->titulo ?></td>
+                    <td>
+                        <img src="<?= $noticia->img ?>" alt="Imagen de <?= $noticia->titulo ?>">
+                    </td>
+                    <td><?= $noticia->resumen ?></td>
+                    <td><?= $noticia->contenido ?></td>
+                    <td><?= $noticia->seccion ?></td>
+                    <td>
+                        <a href="editarNoticia/<?= $noticia->id ?>">Editar</a>
+                        <a href="eliminarNoticia/<?= $noticia->id ?>">
+                            Eliminar
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <div>
+        <h1>Añadir Noticia</h1>
+        <form action="agregar" method="POST">
+            <input type="text" id="titulo" name="titulo" placeholder="Titulo">
+            <input type="text" id="img" name="img" placeholder="Imagen">
+            <input type="text" id="resumen" name="resumen" placeholder="Resumen">
+            <input type="text" id="contenido" name="contenido" placeholder="Contenido">
+            <input type="text" id="seccion" name="seccion" placeholder="Juego">
+            <button class= "btn-agregar">Agregar</button>
+        </form>
+    </div>
+<?php endif; ?>
+<?php require_once 'footer.phtml'; ?>
