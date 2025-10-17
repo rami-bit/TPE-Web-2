@@ -35,21 +35,10 @@ Para usar la página localmente seguí estos pasos mínimos:
    - O dejar el archivo `sql/noticiero.sql` en su ubicación dentro del repo. El código incluye un _auto-deploy_ que ejecutará el SQL desde `sql/noticiero.sql` si la base de datos está vacía.
 
 	Nota: si no importas manualmente y no colocas `sql/noticiero.sql` en el proyecto, el auto-deploy no podrá crear las tablas.
+3. Inicia Apache y MySQL desde el panel de control de XAMPP.
+4. Abre tu navegador y navega a: `http://localhost/TPE-Web-2/` (o la URL que corresponda según donde lo hayas clonado).
 
-3. Asegúrate de que `config.php` contiene las credenciales correctas de MySQL (por defecto `root` sin contraseña para XAMPP):
-
-```php
-// Ejemplo (config.php)
-const MYSQL_USER = 'root';
-const MYSQL_PASS = '';
-const MYSQL_DB = 'noticiero';
-const MYSQL_HOST = 'localhost';
-```
-
-4. Inicia Apache y MySQL desde el panel de control de XAMPP.
-5. Abre tu navegador y navega a: `http://localhost/TPE-Web-2/` (o la URL que corresponda según donde lo hayas clonado).
-
-## Estructura de directorios (breve)
+## Estructura de directorios
 A continuación una descripción rápida de las carpetas/archivos más importantes del proyecto:
 
 - `controllers/` — Controladores que manejan la lógica de la aplicación y orquestan modelo/vista. Ej: `noticia.controller.php`, `auth.controller.php`.
