@@ -1,11 +1,11 @@
-📌 TPE Primera Entrega
+📌 TPE 
 
 👥 Integrantes del Grupo
 - Tobias Davila — tobiasdavnic.13@gmail.com
 - Ramiro Del Valle — ramidv12@gmail.com
 
 📖 Contexto
-El presente repositorio corresponde a la primera entrega del Trabajo Práctico Especial de la materia Web 2. El objetivo es desarrollar un sitio web dinámico que permita la visualización y administración de un conjunto de ítems.
+El presente repositorio corresponde a la entrega del Trabajo Práctico Especial de la materia Web 2. El objetivo es desarrollar un sitio web dinámico que permita la visualización y administración de un conjunto de ítems.
 El acceso al portal será público para cualquier usuario, mientras que solo la cuenta de administrador dispondrá de permisos para crear, modificar y eliminar contenidos.
 
 📰 Temática: Portal de Noticias de Videojuegos
