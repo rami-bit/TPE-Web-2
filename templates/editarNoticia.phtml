@@ -1,25 +1,23 @@
 <?php require_once 'header.phtml' ?>
+<div class="divEdit">
+<form class="formEdit" action="guardarEdicionNoticia/<?= $noticia->id ?>" method="POST">
+    <h2>Titulo:</h2>
+    <input type="text" id="titulo" name="titulo" value="<?= $noticia->titulo ?>">
 
-    <h1 >Panel de Edicion</h1>
+    <h2>Imagen:</h2>
+    <input type="text" id="imagen" name="imagen" value="<?= $noticia->img ?>">
 
-    <form action="guardarEdicionNoticia/<?= $noticia->id ?>" method="POST">
-        <h2>Titulo:</h2>
-        <input type="text" id="titulo" name="titulo" value="<?= $noticia->titulo ?>">
+    <h2>Resumen:</h2>
+    <input type="text" id="resumen" name="resumen" value="<?= $noticia->resumen ?>">
 
-        <h2>Imagen:</h2>
-        <input type="text" id="imagen" name="imagen" value="<?= $noticia->img ?>">
+    <h2>Contenido:</h2>
+    <textarea id="contenido" name="contenido"><?= $noticia->contenido ?></textarea>
 
-        <h2>Resumen:</h2>
-        <input type="text" id="resumen" name="resumen" value="<?= $noticia->resumen ?>">
+    <h2>Seccion ID:</h2>
+    <input type="text" id="seccion_id" name="seccion_id" value="<?= $noticia->seccion_id ?>">
 
-        <h2>Contenido:</h2>
-        <textarea id="contenido" name="contenido"><?= $noticia->contenido ?></textarea>
+    <button type="submit" class="btn-guardarCambios">Guardar Cambios</button>
+    <a class='btn-cancel' href="">Cancelar</a>
 
-        <h2>Seccion ID:</h2>
-        <input type="text" id="seccion_id" name="seccion_id" value="<?= $noticia->seccion_id?>">
-
-        <button type="submit" class="btn-guardarCambios">Guardar Cambios</button>
-
-    </form>
-
-<?php require_once 'footer.phtml' ?>
+</form>
+</div>

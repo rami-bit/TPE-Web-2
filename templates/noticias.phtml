@@ -1,4 +1,7 @@
 <?php require_once 'header.phtml' ?>
+<?php if ($user): ?>
+    <?php require_once 'adminNoticias.phtml'; ?>
+<?php else: ?>
 <main class="noticias">
     <?php foreach($noticias as $noticia){?>
     <article class="card-noticia">
@@ -10,4 +13,5 @@
     </article>
     <?php } ?>
 </main>
+<?php endif;?>
 <?php require_once 'footer.phtml' ?>

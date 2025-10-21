@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="<?= BASE_URL ?>css/style.css?">
     <link rel="stylesheet" href="<?= BASE_URL ?>css/noticias.css?">
     <link rel="stylesheet" href="<?= BASE_URL ?>css/secciones.css?">
-    <link rel="stylesheet" href="<?= BASE_URL?>css/tabla.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/tabla.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>css/forms.css">
+    <link rel="stylesheet" href="<?= BASE_URL ?>css/edit.css">
     <base href="<?php echo BASE_URL ?>">
     <title>El Respawn de la Semana</title>
 </head>
@@ -18,13 +19,22 @@
     <header class="top-bar">
         <h1>El Respawn de la semana</h1>
         <ul>
-            <li><a href="secciones">Secciones</a></li>
-            <li><a href="noticias">Noticias</a></li>
+            <li><a class="link" href="secciones"><?php if ($user): ?>
+                        <?= 'Administrar Secciones' ?>
+                    <?php else: ?>
+                        <?= 'Secciones' ?>
+                    <?php endif ?>
+                </a></li>
+            <li><a class="link" href=""><?php if ($user): ?>
+                        <?= 'Administrar Noticias' ?>
+                    <?php else: ?>
+                        <?= 'Noticias' ?>
+                    <?php endif ?></a></li>
             <li><?php if ($user): ?>
                     <span class="welcomeMessage">Bienvenido, <?= $user->nombre; ?></span>
-                    <a href="logout" aria-current="page" href="logout">Salir</a>
+                    <a class="link" href="logout" aria-current="page" href="logout">Salir</a>
                 <?php else: ?>
-                    <a href="login" aria-current="page" href="login">Ingresar</a>
+                    <a class="link" href="login" aria-current="page" href="login">Ingresar</a>
                 <?php endif; ?>
             </li>
         </ul>

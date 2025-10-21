@@ -1,7 +1,4 @@
 <?php require_once 'header.phtml'; ?>
-<?php if (!$user): ?>
-    <?php require_once 'noticias.phtml'; ?>
-<?php else: ?>
     <h1>Administración de Noticias</h1>
 
     <table>
@@ -37,8 +34,9 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div>
-        <h1>Añadir Noticia</h1>
+
+    <h1 class="añadirNoticia">Añadir Noticia</h1>
+    <div class="post-form">
         <form action="agregar" method="POST">
             <input type="text" id="titulo" name="titulo" placeholder="Titulo">
             <input type="text" id="img" name="img" placeholder="Imagen">
@@ -48,5 +46,4 @@
             <button class= "btn-agregar">Agregar</button>
         </form>
     </div>
-<?php endif; ?>
 <?php require_once 'footer.phtml'; ?>

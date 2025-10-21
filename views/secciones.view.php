@@ -2,7 +2,7 @@
 class SeccionesView {
     
     function mostrarSecciones($secciones, $user) {
-        require_once './templates/adminSecciones.phtml';
+        require_once './templates/secciones.phtml';
     }
 
     function mostrarNoticiasPorSeccion($noticias,$user) {

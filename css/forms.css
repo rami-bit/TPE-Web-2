@@ -1,7 +1,14 @@
 .h1-edicion {
+    
     text-align: center;
     margin-bottom: 30px;
     color: #5c5757;
+}
+
+div.post-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 form {
@@ -52,4 +59,9 @@ input {
     color: white;
     border: black solid 5px;
     border-radius: 8px;
+}
+
+h1.añadirNoticia {
+    text-align: center;
+    align-items: center;
 }

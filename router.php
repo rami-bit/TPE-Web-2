@@ -5,16 +5,26 @@ require_once 'controllers/auth.controller.php';
 require_once 'middlewares/guard.middleware.php';
 require_once 'middlewares/session.middleware.php';
 
-/** Tabla de Ruteo:
-    * noticias -> noticiaController->listarNoticias();
-    *noticias/:ID -> noticiaController->verNoticias($id);
-    *secciones -> seccionesController->listarSecciones(); 
-    *secciones/juego(:nombreSeccion)/noticias-> seccionesController ->listarNoticasBySeccion(nombre)
-    * login            ->     AuthController->showLogin()
-    *agregarNoticia->noticiaController->agregarNoticia();
-    *eliminarNoticia/:ID ->noticiaController->eliminrNoticia($id);
-    *editarNoticia/:id->
-*/
+/** Tabla de Ruteo (actualizada):
+ * Formato: ruta -> Controlador->método(parametros)
+ *
+ * noticias                      -> NoticiaController->mostrarNoticias($request)
+ * verNoticia/:ID                -> NoticiaController->verNoticia($request)           (requiere id en $params[1])
+ * secciones                     -> SeccionesController->listarSecciones($request)
+ * secciones/:nombreSeccion      -> SeccionesController->getNoticiasBySeccion($nombre,$request)
+ * login                         -> AuthController->showLogin($request)
+ * do_login                      -> AuthController->doLogin($request)
+ * logout                        -> AuthController->logout($request)
+ * agregar                       -> NoticiaController->agregarNoticia($request)         (requiere sesión - GuardMiddleware)
+ * eliminarNoticia/:ID           -> NoticiaController->eliminarNoticia($request)      (requiere id y sesión - GuardMiddleware)
+ * editarNoticia/:ID             -> NoticiaController->showEditar($request)           (muestra formulario - requiere sesión)
+ * guardarEdicionNoticia/:ID     -> NoticiaController->guardarEdicionNoticia($request) (guarda cambios - requiere sesión)
+ * agregarSeccion                -> SeccionesController->agregarSeccion($request)     (requiere sesión - GuardMiddleware)
+ * eliminarSeccion/:ID           -> SeccionesController->eliminarSeccion($request)    (requiere id y sesión - GuardMiddleware)
+ * editarSeccion/:ID             -> SeccionesController->showEditar($request)         (muestra formulario - requiere sesión)
+ * guardarEdicionSeccion/:ID     -> SeccionesController->editar($request)             (guarda cambios - requiere sesión)
+
+ */
 
 session_start();
 
@@ -43,27 +53,27 @@ switch ($params[0]) {
             $noticiasController->verNoticia($request);
             break;
         }
-        $noticiasController->showError("Noticia vacia",$request);
-    break;
-    
+        $noticiasController->showError("Noticia vacia", $request);
+        break;
+
     case 'secciones':
         $seccionesController = new SeccionesController();
-        
+
         if (isset($params[1])) {
-            $seccionesController->getNoticiasBySeccion($params[1],$request);
-        }else {
+            $seccionesController->getNoticiasBySeccion($params[1], $request);
+        } else {
             $seccionesController->listarSecciones($request);
         }
-    break;
+        break;
     case 'login':
         $authController = new AuthController();
         $authController->showLogin($request);
-    break;
+        break;
     case 'do_login':
         $authController = new AuthController();
         $authController->doLogin($request);
-    break;
-    
+        break;
+
     case 'logout':
         $authController = new AuthController();
         $authController->logout($request);
@@ -116,10 +126,10 @@ switch ($params[0]) {
         $request->id = $params[1];
         $controllerSeccion = new SeccionesController();
         $controllerSeccion->editar($request);
-        break;  
+        break;
     default:
         $noticiasController = new NoticiaController();
-        $noticiasController->showError("Errror 404 not found",$request);
+        $noticiasController->showError("Errror 404 not found", $request);
         break;
 }
 

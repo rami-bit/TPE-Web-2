@@ -1,19 +1,16 @@
 <?php require_once 'header.phtml' ?>
+<div class="divEdit">
+<form class="formEdit" action="guardarEdicionSeccion/<?= $seccion->id ?>" method="POST">
+    <h2>Titulo:</h2>
+    <input type="text" id="nombre" name="nombre" value="<?= $seccion->nombre ?>">
 
-    <h1>Panel de Edicion</h1>
+    <h2>Imagen:</h2>
+    <input type="text" id="imagen" name="imagen" value="<?= $seccion->img_url ?>">
 
-    <form action="guardarEdicionSeccion/<?= $seccion->id ?>" method="POST">
-        <h2>Titulo:</h2>
-        <input type="text" id="nombre" name="nombre" value="<?= $seccion->nombre ?>">
+    <h2>Genero:</h2>
+    <input type="text" id="genero" name="genero" value="<?= $seccion->genero ?>">
 
-        <h2>Imagen:</h2>
-        <input type="text" id="imagen" name="imagen" value="<?= $seccion->img_url ?>">
-
-        <h2>Genero:</h2>
-        <input type="text" id="genero" name="genero" value="<?= $seccion->genero ?>">
-
-        <button type="submit" class="btn-guardarCambios">Guardar Cambios</button>
-
-    </form>
-
-<?php require_once 'footer.phtml' ?>
+    <button type="submit" class="btn-guardarCambios">Guardar Cambios</button>
+    <a class='btn-cancel' href="secciones">Cancelar</a>
+</form>
+</div>

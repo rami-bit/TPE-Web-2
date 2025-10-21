@@ -2,7 +2,7 @@
 class NoticiasView {
 
     function mostrarNoticias($noticias, $user) {
-        require_once  './templates/adminNoticias.phtml';
+        require_once  './templates/noticias.phtml';
     }
 
 

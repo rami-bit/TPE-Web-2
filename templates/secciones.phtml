@@ -1,4 +1,7 @@
 <?php require_once 'header.phtml'?>
+<?php if ($user): ?>
+    <?php require_once 'adminSecciones.phtml'; ?>
+<?php else: ?>
 <main class="seccion-main">
     <?php foreach($secciones as $seccion){?> 
     <article class="seccion-card">
@@ -12,4 +15,5 @@
     </article>
     <?php } ?>
 </main>
+<?php endif; ?>
 <?php require_once 'footer.phtml' ?>
